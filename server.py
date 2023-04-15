@@ -2,7 +2,7 @@ from flask import Flask, request
 import logging
 import json
 # импортируем функции из нашего второго файла geo
-from geo import get_country, get_distance, get_coordinates
+from Alice_and_maps.geo import get_country, get_distance, get_coordinates
 
 app = Flask(__name__)
 
@@ -10,6 +10,7 @@ app = Flask(__name__)
 # перейдите на pythonwhere в раздел files, он лежит в корневой папке
 logging.basicConfig(level=logging.INFO, filename='app.log',
                     format='%(asctime)s %(levelname)s %(name)s %(message)s')
+sessionStorage = {}
 
 
 @app.route('/post', methods=['POST'])
